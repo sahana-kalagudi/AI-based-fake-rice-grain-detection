@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        RiceGuard | PDF Detection Report
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <h1>
+                    RiceGuard
+                </h1>
+
+                <p>
+                    AI Powered Rice Detection & Quality Analysis
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================================= -->
+    <!-- REPORT PAGE -->
+    <!-- ================================================= -->
+
+    <main class="main-container">
+
+
+        <section class="pdf-page">
+
+
+            <div class="result-heading">
+
+                <h2>
+                    PDF Detection Report
+                </h2>
+
+                <p>
+                    View or download your RiceGuard analysis report
+                </p>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- PDF VIEWER -->
+            <!-- ================================================= -->
+
+            <div class="pdf-card">
+
+                <iframe
+                    src="{{ url_for('view_report', filename=report_filename) }}"
+                    class="pdf-viewer"
+                    title="RiceGuard PDF Detection Report"
+                >
+                </iframe>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- PDF BUTTONS -->
+            <!-- ================================================= -->
+
+            <div class="pdf-actions">
+
+
+                <a
+                    href="{{ url_for('view_report', filename=report_filename) }}"
+                    target="_blank"
+                    class="pdf-view-button"
+                >
+
+                    👁 View PDF
+
+                </a>
+
+
+                <a
+                    href="{{ url_for('download_report', filename=report_filename) }}"
+                    class="pdf-download-button"
+                >
+
+                    📥 Download PDF
+
+                </a>
+
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- BACK BUTTON -->
+            <!-- ================================================= -->
+
+            <div class="back-container">
+
+                <a
+                    href="{{ url_for('index') }}"
+                    class="back-button"
+                >
+
+                    ← Analyze Another Image
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 RiceGuard |
+            AI Rice Quality Detection System
+        </p>
+
+    </footer>
+
+
+</div>
+
+</body>
+
+</html>

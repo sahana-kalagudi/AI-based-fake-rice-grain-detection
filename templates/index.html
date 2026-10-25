@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        RiceGuard | AI Rice Detection
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <h1>
+                    RiceGuard
+                </h1>
+
+                <p>
+                    AI Powered Rice Detection & Quality Analysis
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================================= -->
+    <!-- MAIN -->
+    <!-- ================================================= -->
+
+    <main class="main-container">
+
+
+        <section class="upload-card">
+
+
+            <div class="section-title">
+
+                <span class="title-icon">
+                    📷
+                </span>
+
+                <div>
+
+                    <h2>
+                        Rice Image Analysis
+                    </h2>
+
+                    <p>
+                        Upload an image to detect rice type
+                        and evaluate its quality.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            {% if error %}
+
+            <div class="error-box">
+
+                ⚠️ {{ error }}
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- UPLOAD FORM -->
+
+            <form
+                action="/"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+
+                <div class="upload-box">
+
+
+                    <div class="upload-icon">
+                        🌾
+                    </div>
+
+
+                    <h3>
+                        Upload Rice Image
+                    </h3>
+
+
+                    <p>
+                        JPG, JPEG or PNG
+                    </p>
+
+
+                    <label
+                        for="image"
+                        class="choose-button"
+                    >
+
+                        Choose Image
+
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept=".jpg,.jpeg,.png,.webp"
+                        required
+                    >
+
+
+                    <p
+                        id="file-name"
+                        class="file-name"
+                    ></p>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="analyze-button"
+                >
+
+                    🔍 Analyze Rice
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 RiceGuard |
+            AI Rice Quality Detection System
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script>
+
+const imageInput =
+    document.getElementById("image");
+
+const fileName =
+    document.getElementById("file-name");
+
+
+if (imageInput) {
+
+    imageInput.addEventListener(
+        "change",
+        function () {
+
+            if (this.files.length > 0) {
+
+                fileName.textContent =
+                    "Selected: "
+                    + this.files[0].name;
+
+            }
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

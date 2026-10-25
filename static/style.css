@@ -1,0 +1,1269 @@
+/* =========================================================
+   RICEGUARD
+   AI RICE DETECTION SYSTEM
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8f1 0%,
+            #edf5e9 50%,
+            #f8faf6 100%
+        );
+
+    color: #273225;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #dfe8da;
+
+    padding:
+        22px 7%;
+
+    box-shadow:
+        0 3px 15px rgba(
+            0,
+            0,
+            0,
+            0.04
+        );
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.logo-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 16px;
+
+    background: #edf6e8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 5px 15px rgba(
+            66,
+            107,
+            50,
+            0.12
+        );
+}
+
+
+.logo h1 {
+
+    color: #315425;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+
+.logo p {
+
+    margin-top: 3px;
+
+    color: #788274;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.main-container {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin:
+        45px auto;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   UPLOAD CARD
+   ========================================================= */
+
+.upload-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e0e9dc;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 12px 35px rgba(
+            52,
+            75,
+            42,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.title-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 14px;
+
+    background: #edf6e8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    flex-shrink: 0;
+}
+
+
+.section-title h2 {
+
+    color: #34542a;
+
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+
+.section-title p {
+
+    color: #788274;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   UPLOAD BOX
+   ========================================================= */
+
+.upload-box {
+
+    border:
+        2px dashed #bfd2b7;
+
+    border-radius: 20px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: #fbfdf9;
+
+    transition: 0.3s;
+}
+
+
+.upload-box:hover {
+
+    border-color: #70965f;
+
+    background: #f7fbf4;
+}
+
+
+/* =========================================================
+   UPLOAD ICON
+   ========================================================= */
+
+.upload-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin:
+        0 auto 18px;
+
+    border-radius: 20px;
+
+    background: #edf6e8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+    box-shadow:
+        0 8px 20px rgba(
+            66,
+            107,
+            50,
+            0.10
+        );
+}
+
+
+.upload-box h3 {
+
+    color: #3b5036;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+
+.upload-box p {
+
+    color: #899185;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   FILE INPUT
+   ========================================================= */
+
+.upload-box input[type="file"] {
+
+    display: none;
+}
+
+
+/* =========================================================
+   CHOOSE BUTTON
+   ========================================================= */
+
+.choose-button {
+
+    display: inline-block;
+
+    padding:
+        11px 22px;
+
+    background: #edf6e8;
+
+    color: #426b32;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    border:
+        1px solid #d6e7cf;
+
+    transition: 0.3s;
+}
+
+
+.choose-button:hover {
+
+    background: #dfeeda;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   FILE NAME
+   ========================================================= */
+
+.file-name {
+
+    margin-top: 15px !important;
+
+    margin-bottom: 0 !important;
+
+    color: #426b32 !important;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ANALYZE BUTTON
+   ========================================================= */
+
+.analyze-button {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #426b32,
+            #315425
+        );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(
+            66,
+            107,
+            50,
+            0.20
+        );
+
+    transition: 0.3s;
+}
+
+
+.analyze-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 23px rgba(
+            66,
+            107,
+            50,
+            0.28
+        );
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-box {
+
+    margin-top: 22px;
+
+    margin-bottom: 20px;
+
+    padding: 16px 20px;
+
+    border-radius: 12px;
+
+    background: #fff1f1;
+
+    border:
+        1px solid #f1cccc;
+
+    color: #a33b3b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESULT SECTION
+   ========================================================= */
+
+.result-section {
+
+    margin-top: 0;
+}
+
+
+.result-heading {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.result-heading h2 {
+
+    color: #34542a;
+
+    font-size: 27px;
+
+    margin-bottom: 6px;
+}
+
+
+.result-heading p {
+
+    color: #7b8575;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESULT IMAGE CARD
+   ========================================================= */
+
+.result-image-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e0e9dc;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+
+    margin-bottom: 25px;
+}
+
+
+.result-image-card h3 {
+
+    color: #426336;
+
+    margin-bottom: 18px;
+
+    font-size: 17px;
+}
+
+
+.rice-image {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    max-height: 350px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    border-radius: 16px;
+
+    border:
+        1px solid #e0e8dc;
+
+    background: #f7faf5;
+
+    padding: 8px;
+}
+
+
+/* =========================================================
+   RESULT GRID
+   ========================================================= */
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   RESULT CARD
+   ========================================================= */
+
+.result-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e0e9dc;
+
+    border-radius: 18px;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 7px 22px rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+
+    transition: 0.3s;
+}
+
+
+.result-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 11px 27px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   CARD ICON
+   ========================================================= */
+
+.card-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 14px;
+
+    background: #edf6e8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    margin:
+        0 auto 14px;
+}
+
+
+.result-card h3 {
+
+    color: #53604e;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   PREDICTION
+   ========================================================= */
+
+.prediction {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+}
+
+
+.prediction.real {
+
+    color: #356b2b;
+
+    background: #edf8e9;
+
+    border:
+        1px solid #d2e9cb;
+}
+
+
+.prediction.fake {
+
+    color: #a94444;
+
+    background: #fff0f0;
+
+    border:
+        1px solid #f1d0d0;
+}
+
+
+/* =========================================================
+   PERCENTAGE
+   ========================================================= */
+
+.percentage {
+
+    color: #426b32;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress {
+
+    width: 100%;
+
+    height: 9px;
+
+    background: #e9eee6;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6e9a5b,
+            #426b32
+        );
+
+    transition:
+        width 0.8s ease;
+}
+
+
+/* =========================================================
+   GRADE
+   ========================================================= */
+
+.grade-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.grade {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 18px;
+
+    background: #edf6e8;
+
+    color: #426b32;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    border:
+        2px solid #d5e6ce;
+}
+
+
+/* =========================================================
+   REPORT CARD
+   ========================================================= */
+
+.report-card {
+
+    margin-top: 25px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e1eadc;
+
+    border-radius: 18px;
+
+    padding: 22px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow:
+        0 7px 22px rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+}
+
+
+.report-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 14px;
+
+    background: #edf6e8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    flex-shrink: 0;
+}
+
+
+.report-content {
+
+    flex: 1;
+}
+
+
+.report-content h3 {
+
+    color: #426336;
+
+    margin-bottom: 7px;
+}
+
+
+.report-content p {
+
+    color: #788274;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+.report-button {
+
+    display: inline-block;
+
+    background: #426b32;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    white-space: nowrap;
+}
+
+
+.report-button:hover {
+
+    background: #315425;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   PDF REPORT PAGE
+   ========================================================= */
+
+.pdf-page {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e0e9dc;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(
+            52,
+            75,
+            42,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   PDF CARD
+   ========================================================= */
+
+.pdf-card {
+
+    width: 100%;
+
+    height: 700px;
+
+    border:
+        1px solid #dbe5d6;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    background: #f4f6f2;
+
+    box-shadow:
+        0 5px 18px rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+}
+
+
+/* =========================================================
+   PDF VIEWER
+   ========================================================= */
+
+.pdf-viewer {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: block;
+}
+
+
+/* =========================================================
+   PDF ACTIONS
+   ========================================================= */
+
+.pdf-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.pdf-view-button,
+.pdf-download-button {
+
+    display: inline-block;
+
+    padding:
+        13px 22px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.pdf-view-button {
+
+    background: #edf6e8;
+
+    color: #426b32;
+
+    border:
+        1px solid #d6e7cf;
+}
+
+
+.pdf-download-button {
+
+    background: #426b32;
+
+    color: #ffffff;
+
+    border:
+        1px solid #426b32;
+}
+
+
+.pdf-view-button:hover {
+
+    background: #dfeeda;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.pdf-download-button:hover {
+
+    background: #315425;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-container {
+
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+
+.back-button {
+
+    display: inline-block;
+
+    padding:
+        12px 22px;
+
+    background: #edf6e8;
+
+    color: #426b32;
+
+    border:
+        1px solid #d6e7cf;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.back-button:hover {
+
+    background: #dfeeda;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    color: #7d8779;
+
+    font-size: 13px;
+
+    border-top:
+        1px solid #e0e8dc;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .result-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .pdf-card {
+
+        height: 600px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+
+        padding:
+            18px 5%;
+    }
+
+
+    .main-container {
+
+        width: 92%;
+
+        margin:
+            25px auto;
+    }
+
+
+    .upload-card {
+
+        padding: 22px;
+    }
+
+
+    .section-title {
+
+        align-items: flex-start;
+    }
+
+
+    .section-title h2 {
+
+        font-size: 20px;
+    }
+
+
+    .result-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .report-card {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .report-button {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .pdf-page {
+
+        padding: 18px;
+    }
+
+
+    .pdf-card {
+
+        height: 500px;
+    }
+
+
+    .pdf-actions {
+
+        flex-direction: column;
+    }
+
+
+    .pdf-view-button,
+    .pdf-download-button {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .logo h1 {
+
+        font-size: 25px;
+    }
+
+
+    .logo p {
+
+        font-size: 11px;
+    }
+
+}

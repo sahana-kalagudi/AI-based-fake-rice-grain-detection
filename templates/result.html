@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        RiceGuard | Analysis Result
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <h1>
+                    RiceGuard
+                </h1>
+
+                <p>
+                    AI Powered Rice Detection & Quality Analysis
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================================= -->
+    <!-- MAIN -->
+    <!-- ================================================= -->
+
+    <main class="main-container">
+
+
+        <section class="result-section">
+
+
+            <!-- RESULT HEADING -->
+
+            <div class="result-heading">
+
+                <h2>
+                    Analysis Result
+                </h2>
+
+                <p>
+                    AI analysis completed successfully
+                </p>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- IMAGE -->
+            <!-- ================================================= -->
+
+            <div class="result-image-card">
+
+                <h3>
+                    Uploaded Rice Image
+                </h3>
+
+
+                <img
+                    src="{{ url_for('static', filename=image_path) }}"
+                    alt="Rice Image"
+                    class="rice-image"
+                >
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- RESULT CARDS -->
+            <!-- ================================================= -->
+
+            <div class="result-grid">
+
+
+                <!-- PREDICTION -->
+
+                <div class="result-card">
+
+                    <div class="card-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        Prediction
+                    </h3>
+
+
+                    {% if result == "Real Rice" %}
+
+                    <div class="prediction real">
+
+                        {{ result }}
+
+                    </div>
+
+                    {% else %}
+
+                    <div class="prediction fake">
+
+                        {{ result }}
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- ACCURACY -->
+
+                <div class="result-card">
+
+                    <div class="card-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Accuracy
+                    </h3>
+
+
+                    <div class="percentage">
+
+                        {{ "%.2f"|format(accuracy) }}%
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill"
+                            data-progress-width="{{ accuracy }}"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUALITY -->
+
+                <div class="result-card">
+
+                    <div class="card-icon">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Rice Quality
+                    </h3>
+
+
+                    <div class="percentage">
+
+                        {{ "%.2f"|format(quality) }}%
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill"
+                            data-progress-width="{{ quality }}"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GRADE -->
+
+                <div class="result-card grade-card">
+
+                    <div class="card-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Quality Grade
+                    </h3>
+
+
+                    <div class="grade">
+
+                        {{ grade }}
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- REPORT CARD -->
+            <!-- ================================================= -->
+
+            <div class="report-card">
+
+
+                <div class="report-icon">
+                    📄
+                </div>
+
+
+                <div class="report-content">
+
+                    <h3>
+                        PDF Detection Report
+                    </h3>
+
+
+                    <p>
+
+                        Detection ID:
+
+                        <strong>
+                            {{ detection_id }}
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+                        {{ detection_time }}
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="{{ url_for('report_page', filename=report_filename) }}"
+                    class="report-button"
+                >
+
+                    👁 View PDF Report
+
+                </a>
+
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- BACK -->
+            <!-- ================================================= -->
+
+            <div class="back-container">
+
+                <a
+                    href="{{ url_for('index') }}"
+                    class="back-button"
+                >
+
+                    ← Analyze Another Image
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 RiceGuard |
+            AI Rice Quality Detection System
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- PROGRESS BAR SCRIPT -->
+<!-- ================================================= -->
+
+<script>
+
+document
+    .querySelectorAll(
+        "[data-progress-width]"
+    )
+    .forEach(
+        function (bar) {
+
+            const width =
+                Number(
+                    bar.dataset.progressWidth
+                );
+
+            bar.style.width =
+                Math.max(
+                    0,
+                    Math.min(
+                        100,
+                        width
+                    )
+                ) + "%";
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
